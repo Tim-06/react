@@ -1,0 +1,22 @@
+div {
+  nav {
+    background-color: #ffcc66;
+
+    ul {
+      list-style-type: none; // 移除點
+      padding: 0px 30px;
+
+      li {
+        display: inline-block; // 將列表項水平顯示
+        margin-right: 10px; // 添加一些間距
+        font-size: 1.25rem;
+        padding: 3px;
+        a.nav-link {
+          // 使用 a.nav-link 作為選擇器
+          color: black;
+          text-decoration: none; // 移除下劃線
+        }
+      }
+    }
+  }
+}

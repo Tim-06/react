@@ -1,0 +1,60 @@
+@charset "UTF-8";
+.divBackGround {
+  width: 100%;
+  height: 100vh;
+  background-color: #ffdb93;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.divBackGround .search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.divBackGround .search p {
+  font-size: 2rem;
+}
+.divBackGround .search button {
+  margin: 0 10px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  background-color: #f78f20;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.divBackGround .search button:hover {
+  background-color: #e0781e;
+}
+.divBackGround .Img {
+  width: 50vw;
+  height: 75vh;
+  margin-top: 30px;
+  position: relative;
+}
+.divBackGround .Img img {
+  width: 100%;
+  height: 100%;
+}
+.divBackGround .selectContainer {
+  position: relative;
+  width: 50px; /* 自訂寬度 */
+  margin-left: 10px;
+  margin-right: 5px; /* 調整間距 */
+}
+.divBackGround select {
+  width: 100%;
+  padding: 5px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; /* 隱藏原生的下拉箭頭 */
+  background-color: white;
+  cursor: pointer;
+}/*# sourceMappingURL=home.css.map */

@@ -1,0 +1,46 @@
+@charset "UTF-8";
+div.background {
+  background-color: #ffdb93;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* 水平置中 */
+}
+div.background form {
+  background-color: #ffe9bc;
+  width: 50%;
+  height: 80vh;
+  margin-top: 20px; /* 調整間距 */
+  padding: 20px; /* 添加內邊距 */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+div.background form h1 {
+  margin-bottom: 10px; /* 調整標籤之間的間距 */
+}
+div.background form label {
+  margin-bottom: 10px; /* 調整標籤之間的間距 */
+}
+div.background form input {
+  padding: 10px; /* 添加內邊距 */
+  border: none;
+  border-bottom: 2px solid #333; /* 添加底部邊框 */
+  outline: none; /* 移除默認的外框 */
+  transition: border-bottom-color 0.3s ease; /* 添加過渡效果 */
+}
+div.background form input:focus {
+  border-bottom-color: #ff5733; /* 聚焦時改變底部邊框顏色 */
+}
+div.background form button {
+  margin-bottom: 20px;
+  padding: 10px 20px; /* 調整按鈕大小 */
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* 添加過渡效果 */
+}
+div.background form button:hover {
+  background-color: #555; /* 滑鼠懸停時改變背景顏色 */
+}/*# sourceMappingURL=login.css.map */
