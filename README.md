@@ -10,11 +10,11 @@
 
 ## 技術
 
-React
-React Router DOM
-Axios
-Mongoose
-Navigate
+- React
+- React Router DOM
+- Axios
+- Mongoose
+- Navigate
 
 ## 網址
 
