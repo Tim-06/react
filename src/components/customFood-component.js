@@ -8,6 +8,7 @@ function CustomFoodComponent({ currentUser }) {
   const [showForm, setShowForm] = useState(false); // 控制表格的顯示與隱藏
   const [selectedOption, setSelectedOption] = useState("早餐");
   const [newFoodName, setNewFoodName] = useState("");
+  const [renew, setRenew] = useState(false);
 
   const handleSelectChange = (e) => {
     setSelectedOption(e.target.value);
@@ -29,16 +30,7 @@ function CustomFoodComponent({ currentUser }) {
         console.log(e);
       });
     //更新食物清單
-    foodGet
-      .getUserFood(userEmail)
-      .then((res) => {
-        let dataList = res.data[0].foods.map((item) => item.foodName);
-        setFoodList(dataList);
-        console.log(dataList);
-      })
-      .catch((e) => {
-        console.log("獲取食物失敗:" + e);
-      });
+    setRenew(true);
   };
   //刪除食物
   const handleDeleteFood = (index) => {
@@ -62,6 +54,7 @@ function CustomFoodComponent({ currentUser }) {
   };
   //獲取食物清單
   useEffect(() => {
+    setRenew(false);
     if (currentUser) {
       const userEmail = authService.getCurrentUser().user.email;
 
@@ -76,7 +69,7 @@ function CustomFoodComponent({ currentUser }) {
           console.log("獲取食物失敗:" + e);
         });
     }
-  }, []);
+  }, [renew]);
 
   return (
     <>
