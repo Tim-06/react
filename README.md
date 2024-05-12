@@ -15,4 +15,3 @@ React Router DOM
 Axios
 Mongoose
 Navigate
-Web Vitals
