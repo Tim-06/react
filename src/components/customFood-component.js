@@ -15,7 +15,9 @@ function CustomFoodComponent({ currentUser }) {
   const handleNewFoodName = (e) => {
     setNewFoodName(e.target.value);
   };
+  //插入食物
   const handleInsertNewFood = (e) => {
+    e.preventDefault(); // 阻止表單的默認提交行為
     const userEmail = authService.getCurrentUser().user.email;
 
     foodGet
@@ -26,8 +28,19 @@ function CustomFoodComponent({ currentUser }) {
       .catch((e) => {
         console.log(e);
       });
+    //更新食物清單
+    foodGet
+      .getUserFood(userEmail)
+      .then((res) => {
+        let dataList = res.data[0].foods.map((item) => item.foodName);
+        setFoodList(dataList);
+        console.log(dataList);
+      })
+      .catch((e) => {
+        console.log("獲取食物失敗:" + e);
+      });
   };
-
+  //刪除食物
   const handleDeleteFood = (index) => {
     const userEmail = authService.getCurrentUser().user.email;
     const deleteFood = foodList[index];
@@ -47,7 +60,7 @@ function CustomFoodComponent({ currentUser }) {
   const handleAddFood = () => {
     setShowForm(true); // 點擊新增按鈕時顯示表單
   };
-
+  //獲取食物清單
   useEffect(() => {
     if (currentUser) {
       const userEmail = authService.getCurrentUser().user.email;
