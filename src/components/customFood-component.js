@@ -25,12 +25,12 @@ function CustomFoodComponent({ currentUser }) {
       .insertFood(userEmail, newFoodName, selectedOption)
       .then((res) => {
         console.log(res);
+        //更新食物清單
+        setRenew(true);
       })
       .catch((e) => {
         console.log(e);
       });
-    //更新食物清單
-    setRenew(true);
   };
   //刪除食物
   const handleDeleteFood = (index) => {
