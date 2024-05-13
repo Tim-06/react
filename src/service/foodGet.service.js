@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = "http://localhost:8080/getFood";
+const API_URL = "https://server-foodrecommend.onrender.com/getFood";
 
 class foodService {
   // user的食物清單
