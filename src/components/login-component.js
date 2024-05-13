@@ -30,7 +30,7 @@ function LoginComponent({ setCurrentUser }) {
       AuthService.login(email, password)
         .then((res) => {
           localStorage.setItem("user", JSON.stringify(res.data));
-          window.alert("登入成功。您現在將被重新導向到個人資料頁面。");
+          window.alert("登入成功。");
           setCurrentUser(AuthService.getCurrentUser()); // 更新當前用戶的狀態
           navigate("/"); // 重新導向到首頁
         })

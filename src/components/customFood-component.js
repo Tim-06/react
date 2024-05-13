@@ -42,7 +42,7 @@ function CustomFoodComponent({ currentUser }) {
       .then((res) => {
         let dataList = res.data.foods.map((item) => item.foodName);
         setFoodList(dataList);
-        console.log("成功刪除:" + deleteFood);
+        window.alert("成功刪除:" + deleteFood);
       })
       .catch((e) => {
         console.log("刪除失敗:", e);
