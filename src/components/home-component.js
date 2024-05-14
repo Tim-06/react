@@ -25,13 +25,14 @@ function HomeComponent({ currentUser, setCurrentUser }) {
             setFoodList(dataList);
             console.log(dataList);
             console.log(selectedOption);
-            stop();
+            //stop();
           } else {
             let dataList = res.data[0].foods.map((item) => item.foodName);
             setFoodList(dataList);
             console.log(dataList);
-            stop();
+            //    stop();
           }
+          stop();
         })
         .catch((e) => {
           console.log("獲取食物失敗:" + e);
@@ -70,7 +71,7 @@ function HomeComponent({ currentUser, setCurrentUser }) {
   const handleSelectChange = (e) => {
     setSelectedOption(e.target.value);
   };
-
+  //顯示結果
   const stop = () => {
     const randomIndex = Math.floor(Math.random() * foodList.length);
     setResult(foodList[randomIndex]);
