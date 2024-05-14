@@ -30,7 +30,7 @@ function HomeComponent({ currentUser, setCurrentUser }) {
             setFoodList(dataList);
             console.log(dataList);
           }
-          stop();
+          // stop();
         })
         .catch((e) => {
           console.log("獲取食物失敗:" + e);
@@ -45,7 +45,7 @@ function HomeComponent({ currentUser, setCurrentUser }) {
             let dataList = res.data.map((item) => item.foodName);
             setFoodList(dataList);
             console.log(dataList);
-            stop();
+            // stop();
           })
           .catch((e) => {
             console.log("獲取食物失敗:" + e);
@@ -57,7 +57,7 @@ function HomeComponent({ currentUser, setCurrentUser }) {
             let dataList = res.data.map((item) => item.foodName);
             setFoodList(dataList);
             console.log(dataList);
-            stop();
+            //  stop();
           })
           .catch((e) => {
             console.log("獲取食物失敗:" + e);
@@ -71,11 +71,11 @@ function HomeComponent({ currentUser, setCurrentUser }) {
   };
 
   //顯示結果
-  const stop = () => {
-    const randomIndex = Math.floor(Math.random() * foodList.length);
-    setResult(foodList[randomIndex]);
-    setBearImage(bear2);
-  };
+  // const stop = () => {
+  //   const randomIndex = Math.floor(Math.random() * foodList.length);
+  //   setResult(foodList[randomIndex]);
+  //   setBearImage(bear2);
+  // };
 
   useEffect(() => {
     if (!firstStartPage) {
