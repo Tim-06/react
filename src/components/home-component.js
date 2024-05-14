@@ -11,6 +11,7 @@ function HomeComponent({ currentUser, setCurrentUser }) {
   const [selectedOption, setSelectedOption] = useState("隨機");
   const [firstStartPage, setFirstStartPage] = useState(true);
   const start = () => {
+    setFirstStartPage(false);
     //登入的使用者按下按鈕，開始從資料庫取出特定資料
     if (currentUser) {
       const userEmail = authService.getCurrentUser().user.email;
@@ -30,7 +31,6 @@ function HomeComponent({ currentUser, setCurrentUser }) {
             setFoodList(dataList);
             console.log(dataList);
           }
-          // stop();
         })
         .catch((e) => {
           console.log("獲取食物失敗:" + e);
@@ -57,7 +57,6 @@ function HomeComponent({ currentUser, setCurrentUser }) {
             let dataList = res.data.map((item) => item.foodName);
             setFoodList(dataList);
             console.log(dataList);
-            //  stop();
           })
           .catch((e) => {
             console.log("獲取食物失敗:" + e);
@@ -70,13 +69,6 @@ function HomeComponent({ currentUser, setCurrentUser }) {
     setSelectedOption(e.target.value);
   };
 
-  //顯示結果
-  // const stop = () => {
-  //   const randomIndex = Math.floor(Math.random() * foodList.length);
-  //   setResult(foodList[randomIndex]);
-  //   setBearImage(bear2);
-  // };
-
   useEffect(() => {
     if (!firstStartPage) {
       const randomIndex = Math.floor(Math.random() * foodList.length);
@@ -87,7 +79,7 @@ function HomeComponent({ currentUser, setCurrentUser }) {
 
   useEffect(() => {
     //獲取使用者食物資料
-    setFirstStartPage(false);
+
     if (currentUser) {
       const userEmail = authService.getCurrentUser().user.email;
 
