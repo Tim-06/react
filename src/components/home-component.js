@@ -25,12 +25,10 @@ function HomeComponent({ currentUser, setCurrentUser }) {
             setFoodList(dataList);
             console.log(dataList);
             console.log(selectedOption);
-            //stop();
           } else {
             let dataList = res.data[0].foods.map((item) => item.foodName);
             setFoodList(dataList);
             console.log(dataList);
-            //    stop();
           }
           stop();
         })
@@ -71,11 +69,14 @@ function HomeComponent({ currentUser, setCurrentUser }) {
   const handleSelectChange = (e) => {
     setSelectedOption(e.target.value);
   };
+
   //顯示結果
   const stop = () => {
-    const randomIndex = Math.floor(Math.random() * foodList.length);
-    setResult(foodList[randomIndex]);
-    setBearImage(bear2);
+    setTimeout(() => {
+      const randomIndex = Math.floor(Math.random() * foodList.length);
+      setResult(foodList[randomIndex]);
+      setBearImage(bear2);
+    }, 2000); // 这里的2000表示等待时间为2秒，单位是毫秒，你可以根据需要调整
   };
 
   useEffect(() => {
