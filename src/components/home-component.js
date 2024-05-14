@@ -9,7 +9,7 @@ function HomeComponent({ currentUser, setCurrentUser }) {
   const [foodList, setFoodList] = useState([]);
   const [result, setResult] = useState("吃什麼?");
   const [selectedOption, setSelectedOption] = useState("隨機");
-
+  const [firstStartPage, setFirstStartPage] = useState(true);
   const start = () => {
     //登入的使用者按下按鈕，開始從資料庫取出特定資料
     if (currentUser) {
@@ -72,15 +72,22 @@ function HomeComponent({ currentUser, setCurrentUser }) {
 
   //顯示結果
   const stop = () => {
-    setTimeout(() => {
-      const randomIndex = Math.floor(Math.random() * foodList.length);
-      setResult(foodList[randomIndex]);
-      setBearImage(bear2);
-    }, 2000); // 这里的2000表示等待时间为2秒，单位是毫秒，你可以根据需要调整
+    const randomIndex = Math.floor(Math.random() * foodList.length);
+    setResult(foodList[randomIndex]);
+    setBearImage(bear2);
   };
 
   useEffect(() => {
+    if (!firstStartPage) {
+      const randomIndex = Math.floor(Math.random() * foodList.length);
+      setResult(foodList[randomIndex]);
+      setBearImage(bear2);
+    }
+  }, [foodList]);
+
+  useEffect(() => {
     //獲取使用者食物資料
+    setFirstStartPage(false);
     if (currentUser) {
       const userEmail = authService.getCurrentUser().user.email;
 
