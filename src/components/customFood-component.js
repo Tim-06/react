@@ -24,7 +24,8 @@ function CustomFoodComponent({ currentUser }) {
     foodGet
       .insertFood(userEmail, newFoodName, selectedOption)
       .then((res) => {
-        console.log(res);
+        window.alert(selectedOption + ":" + newFoodName + "新增成功");
+
         //更新食物清單
         setRenew(true);
       })
